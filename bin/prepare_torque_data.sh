@@ -79,7 +79,11 @@ eval $AWK_CMD | $SED 's/\ /_/' >> $TMPFILE
 # split and cleanup
 $AWK '{print $1}' $TMPFILE > $OUTFILE_D
 $AWK '{$1=""; print}' $TMPFILE > $OUTFILE_N
-$RM $TMPFILE
+$RM $TMPFILE #KEEPME
+# /usr/bin/rm $TMPFILE #LOCAL
+DIR=$BASENAME
+mkdir $DIR
+mv -t $DIR $OUTFILE_D $OUTFILE_N $OUTFILE_AUX
 
 # all pau!   )
 exit 0

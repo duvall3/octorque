@@ -1,0 +1,4 @@
+# .gitignore for HEAD
+*.dat
+.*.swp
+trackLog_example

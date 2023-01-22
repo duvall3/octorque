@@ -37,12 +37,7 @@ xlim([0 t(end)])
 ylim([1 max(Engine_RPM_rpm)*1.2])
 NLIVE = 5;
 
-% propmt for live mode
-bLIVE = yes_or_no("Start Live Mode? ");
-if bLIVE
-  run obd_live
-endif
-
 % all pau!   )
 % printf("\n~~~ Octorque Finished ~~~\n\n")
-printf("\n~~~ Octorque Import Finished ~~~\n\n")
+printf("\n~~~ Octorque Import Finished ~~~\n")
+printf("\n# To start Live Mode, run the command `run obd_live` #\n\n");

@@ -18,8 +18,8 @@
 %    You should have received a copy of the GNU General Public License
 %    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-if ~exist("NLIVE") NLIVE = 1; endif
 printf("\n# Beginnig Live Mode #\nPress <Ctrl-C> to exit.\n");
+if ~exist("NLIVE") NLIVE = 1; endif
 for LIVECOUNT = 1:(NLIVE*60)
   add_torque_lines
   set(p, 'xdata', t)

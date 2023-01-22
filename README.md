@@ -17,13 +17,13 @@ Copyright (C) 2022 Mark J. Duvall
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-**A copy of the GPL is provided at `LOCATION`**
+**A copy of the GPL is provided in the file `LICENSE`**
 
 ---
 
 ## OVERVIEW
 
-Overview body text
+Software for importing OBDII data (via the Torque app) into Octave
 
 ## USAGE
 

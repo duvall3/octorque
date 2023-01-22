@@ -32,9 +32,12 @@ if length(filename) == 0
 endif
 [~, ~, ~, ext] = regexp(filename, "\.[^\.]+$");
 basename = regexprep(filename, ext, "");
-d_file = sprintf("%s_d.dat", basename);
-n_file = sprintf("%s_n.dat", basename);
-aux_file = sprintf("%s_aux.dat", basename);
+% d_file = sprintf("%s_d.dat", basename);
+% n_file = sprintf("%s_n.dat", basename);
+% aux_file = sprintf("%s_aux.dat", basename);
+d_file = sprintf("%s/%s_d.dat", basename, basename);
+n_file = sprintf("%s/%s_n.dat", basename, basename);
+aux_file = sprintf("%s/%s_aux.dat", basename, basename);
 
 % call shell script
 if exist("OTBD")
