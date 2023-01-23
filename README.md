@@ -35,6 +35,7 @@ Short Version:
 - Either run the line `PATH=$PATH:~/octorque/bin` or add it to your `.bashrc` (modify directory if needed)
 - Navigate to the directory containing your Torque data
 - Run the command `octorque.sh`
+- Follow the instructions at the prompt
 
 ---
 
