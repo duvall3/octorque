@@ -18,16 +18,20 @@
 %    You should have received a copy of the GNU General Public License
 %    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-printf("\n# Beginnig Live Mode #\nPress <Ctrl-C> to exit.\n");
+% printf("\n# Beginnig Live Mode #\nPress <Ctrl-C> to exit.\n");
 if ~exist("NLIVE") NLIVE = 1; endif
 for LIVECOUNT = 1:(NLIVE*60)
   add_torque_lines
   set(p, 'xdata', t)
-  set(p, 'ydata', Engine_RPM_rpm)
+  YDATA_CMD = sprintf( "set(p, 'ydata', %s)", get(get(gca,'ylabel'),'string') );
+  eval(YDATA_CMD);
   % xlim([0 t(end)])
   xlim([t(end)-60 t(end)])
+  YDATA = get(p, 'ydata');
+  % ylim(1.2*[min(YDATA) max(YDATA)])
+  ylim(1.2*[0. max(YDATA)])
   pause(1)
 end
 
 % all pau!   )
-printf("# Exiting Live Mode #\n\n");
+% printf("# Exiting Live Mode #\n\n");

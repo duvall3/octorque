@@ -34,11 +34,15 @@ endif
 % main -- read
 if N_add == 0 return endif
 NEWDATA = dlmread(filename, ',', N_current+1, 1);
+if all(size(NEWDATA)==0) return endif
 % COL_NUMS--;
 SYSCMD = sprintf("awk -F ',' 'NR>%d {print $1}' %s", N_current+1, filename);
 [~, NEWDATES] = system(SYSCMD);
 NEWDATES_newlines = regexp(NEWDATES, "\n");
 ind0=1;
+if length(NEWDATES) == 0
+  return
+endif
 for k = 1:N_add
   % printf("Adding line extra_%d\n", k);
   ind1 = NEWDATES_newlines(k) - 1;

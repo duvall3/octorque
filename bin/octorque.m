@@ -28,9 +28,10 @@ grid on
 grid minor on
 set(ax, 'fontsize', 24)
 set(p, 'marker', '*')
-title 'OBD Data'
-xlabel 'Time (s)'
-ylabel 'Engine Revs (RPM)'
+T = title('OBD Data');
+xla = xlabel('Time (s)');
+yla = ylabel('Engine_RPM_rpm');
+set(yla, 'interpreter', 'none')
 % xlim([0 60])
 % ylim([1 max(Engine_RPM_rpm(1:60))*1.2])
 xlim([0 t(end)])
@@ -39,5 +40,8 @@ NLIVE = 5;
 
 % all pau!   )
 % printf("\n~~~ Octorque Finished ~~~\n\n")
-printf("\n~~~ Octorque Import Finished ~~~\n")
-printf("\n# To start Live Mode, run the command `run obd_live` #\n\n");
+printf("\n~~~ Octorque Import Finished ~~~\n\n")
+printf("# To start Live Mode: Run the command `obd_live` #\n");
+printf("# To exit  Live Mode:      Type  <Ctrl-C>        #\n\n");
+
+% all pau!   )
