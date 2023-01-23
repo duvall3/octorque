@@ -22,20 +22,23 @@ run import_torque_data
 
 % first plot -- HC: Engine_RPM_rpm
 f = figure;
-ax = axes;
-p = plot(t, Engine_RPM_rpm);
+% ax = axes;
+ax = plotyy(t, Engine_RPM_rpm, t, Engine_Coolant_Temperature_F);
+p = [get(ax,'children'){1}; get(ax,'children'){2}];
 grid on
 grid minor on
-set(ax, 'fontsize', 24)
-set(p, 'marker', '*')
+set(f, 'units', 'normalized', 'position', [0 0 1 1])
+set(ax, 'fontsize', 24) %TODO adjust <[outer]position>?
+set(p, 'marker', '*', 'linewidth', 3)
 T = title('OBD Data');
 xla = xlabel('Time (s)');
-yla = ylabel('Engine_RPM_rpm');
+yla(1) = ylabel(ax(1),'Engine_RPM_rpm');
+yla(2) = ylabel(ax(2),'Engine_Coolant_Temperature_F');
 set(yla, 'interpreter', 'none')
 % xlim([0 60])
 % ylim([1 max(Engine_RPM_rpm(1:60))*1.2])
 xlim([0 t(end)])
-ylim([1 max(Engine_RPM_rpm)*1.2])
+% ylim([1 max(Engine_RPM_rpm)*1.2])
 NLIVE = 5;
 
 % all pau!   )

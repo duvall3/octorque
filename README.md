@@ -25,6 +25,8 @@ Copyright (C) 2022 Mark J. Duvall
 
 Software for importing OBDII data (via the Torque app) into Octave
 
+<img src="example_output.png" alt="Example Plots" title="Example Output" width="50%">
+
 ## USAGE
 
 Short Version:
@@ -36,4 +38,4 @@ Short Version:
 
 ---
 
-*Last updated 2023/01/22*
+*Last updated 2023/01/23*
